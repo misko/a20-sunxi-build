@@ -1006,3 +1006,8 @@ LV7_volt = 1100
 LV8_freq = 312000000
 LV8_volt = 1050
 
+
+[pwm1_para]
+pwm_used = 1
+pwm_period = 10000
+pwm_duty_percent = 100
