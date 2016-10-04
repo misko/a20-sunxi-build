@@ -13,7 +13,7 @@ ldo2_vol = 3000
 ldo3_vol = 2800
 ldo4_vol = 2800
 power_start = 0
-storage_type = -1
+storage_type = 0
 
 [clock]
 pll3 = 297
@@ -203,14 +203,16 @@ uart_rx = port:PA15<3><1><default><default>
 
 [gpio_para]
 gpio_used = 1
-gpio_num = 7
+gpio_num = 9
 gpio_pin_1 = port:PG00<0><default><default><0>
 gpio_pin_2 = port:PG01<1><default><default><0>
 gpio_pin_3 = port:PG02<1><default><default><0>
 gpio_pin_4 = port:PG03<1><default><default><0>
 gpio_pin_5 = port:PG04<1><default><default><0>
 gpio_pin_6 = port:PG05<1><default><default><0>
-gpio_pin_7 = port:PI03<1><default><default><0>
+gpio_pin_7 = port:PI03<1><2><default><0>
+gpio_pin_8 = port:PH26<0><2><default><0>
+gpio_pin_9 = port:PH07<0><1><default><0>
 
 [spi_board0]
 modalias = "spidev"
@@ -293,7 +295,7 @@ motor_used = 0
 motor_shake = port:PB03<1><default><default><1>
 
 [nand_para]
-nand_used = 1
+nand_used = 0
 nand_we = port:PC00<2><default><default><default>
 nand_ale = port:PC01<2><default><default><default>
 nand_cle = port:PC02<2><default><default><default>
@@ -651,7 +653,7 @@ sdc_isio = 0
 sdc_regulator = "none"
 
 [mmc2_para]
-sdc_used = 0
+sdc_used = 1
 sdc_detmode = 3
 sdc_buswidth = 4
 sdc_cmd = port:PC06<3><1><2><default>
@@ -911,6 +913,7 @@ spdif_din =
 [audio_para]
 audio_used = 1
 audio_capture = 1
+capture_used = 1
 audio_pa_ctrl = port:PH27<1><default><default><1>
 
 [switch_para]

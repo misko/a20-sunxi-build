@@ -8,7 +8,8 @@ fi
 
 rm $imgfn
 echo "CREATE IMAGE"
-fallocate -l 2G $imgfn
+sz=`du -sm rootfs.ext4 | awk '{print ($1)*2+50}'`
+fallocate -l ${sz}M $imgfn
 
 losetup -v -f ${imgfn}
 
@@ -57,6 +58,9 @@ cp uImage /mnt/pb
 rm script.bin
 ${fex2bin} sys_config.fex script.bin
 cp script.bin /mnt/pb
+rm boot.scr
+mkimage -C none -A arm -T script -d boot.cmd boot.scr
+cp boot.scr /mnt/pb
 umount /mnt/pb
 losetup -d /dev/loop0
 
@@ -67,4 +71,8 @@ losetup -v -f ${imgfn} -o $p2o
 #umount /mnt/pb
 fsck.ext4 -y rootfs.ext4
 dd if=rootfs.ext4 of=/dev/loop0
+resize2fs /dev/loop0
+mount /dev/loop0 /mnt/pb
+cp rootfs.ext4 /mnt/pb
+umount /mnt/pb
 losetup -d /dev/loop0
