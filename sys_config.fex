@@ -669,7 +669,7 @@ sdc_isio = 0
 sdc_regulator = "none"
 
 [mmc3_para]
-sdc_used = 0
+sdc_used = 1
 sdc_detmode = 4
 sdc_buswidth = 4
 sdc_cmd = port:PI04<2><1><2><default>
@@ -804,7 +804,7 @@ gps_osc_en = port:PI14<1><default><default><0>
 gps_rx_en = port:PI15<1><default><default><0>
 
 [sdio_wifi_para]
-sdio_wifi_used = 0
+sdio_wifi_used = 1
 sdio_wifi_sdc_id = 3
 sdio_wifi_mod_sel = 9
 rtk_rtl8723as_wb_pwr = port:PH25<1><0><default><0>
@@ -813,7 +813,7 @@ rtk_rtl8723as_wl_wps = port:PH16<0><default><default><0>
 rtk_rtl8723as_bt_dis = port:PI21<1><default><default><0>
 
 [usb_wifi_para]
-usb_wifi_used = 1
+usb_wifi_used = 0
 usb_wifi_usbc_num = 2
 
 [3g_para]
