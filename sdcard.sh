@@ -70,9 +70,17 @@ losetup -v -f ${imgfn} -o $p2o
 #tar -C /mnt/pb/ -xjpf rootfs.tar.bz2
 #umount /mnt/pb
 fsck.ext4 -y rootfs.ext4
+rm -f rootfs.ext4.gz
+gzip -k rootfs.ext4
 dd if=rootfs.ext4 of=/dev/loop0
 resize2fs /dev/loop0
 mount /dev/loop0 /mnt/pb
-cp rootfs.ext4 /mnt/pb
+echo IN DEV MODE NOT COPYING IAMGE
+echo IN DEV MODE NOT COPYING IAMGE
+echo IN DEV MODE NOT COPYING IAMGE
+echo IN DEV MODE NOT COPYING IAMGE
+echo IN DEV MODE NOT COPYING IAMGE
+echo IN DEV MODE NOT COPYING IAMGE
+cp rootfs.ext4.gz /mnt/pb #for flashing!
 umount /mnt/pb
 losetup -d /dev/loop0

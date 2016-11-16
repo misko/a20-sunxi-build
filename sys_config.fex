@@ -498,7 +498,7 @@ hdmi_used = 1
 [camera_list_para]
 camera_list_para_used = 1
 ov7670 = 0
-gc0308 = 1
+gc0308 = 0
 gt2005 = 0
 hi704 = 0
 sp0838 = 0
@@ -681,8 +681,6 @@ sdc_d3 = port:PI09<2><1><2><default>
 sdc_det =
 sdc_use_wp = 0
 sdc_wp =
-sdc_isio = 1
-sdc_regulator = "none"
 
 [ms_para]
 ms_used = 0
